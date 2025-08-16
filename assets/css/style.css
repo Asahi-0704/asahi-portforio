@@ -147,8 +147,8 @@ img {
 /* 4) layout（サイト全体の骨格） */
 /* 2) 変数・mixin（@use as * で直書き可） */
 .header {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 20px;
+  padding-bottom: 4px;
   background-color: #f0f8ff;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
@@ -193,9 +193,9 @@ img {
 
 .header__logo-link {
   display: block;
-  padding-left: 50px;
+  padding-left: 60px;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 40px;
   background: -webkit-gradient(linear, left top, right top, from(#ffcc00), color-stop(50%, #ff8c00), to(#ff6f91));
   background: linear-gradient(90deg, #ffcc00 0%, #ff8c00 50%, #ff6f91 100%);
   -webkit-background-clip: text;
@@ -223,11 +223,11 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  top: 26%;
+  top: 29%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: url("../img/logo-icon.png") no-repeat center center;
   background-size: contain;
 }
@@ -325,8 +325,9 @@ img {
 }
 
 .drawer-icon {
-  width: 28px;
-  height: 18px;
+  margin-bottom: 3px;
+  width: 30px;
+  height: 26px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,8 +347,8 @@ img {
 }
 
 .drawer-icon__line {
-  width: 28px;
-  height: 2px;
+  width: 30px;
+  height: 3px;
   background-color: #F6AB36;
   -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
@@ -360,18 +361,18 @@ img {
 }
 
 .header__open.active .drawer-icon__line:nth-child(1) {
-  -webkit-transform: translateY(8px) rotate(45deg);
-          transform: translateY(8px) rotate(45deg);
+  -webkit-transform: translateY(11px) rotate(45deg);
+          transform: translateY(11px) rotate(45deg);
 }
 
 .header__open.active .drawer-icon__line:nth-child(3) {
-  -webkit-transform: translateY(-8px) rotate(-45deg);
-          transform: translateY(-8px) rotate(-45deg);
+  -webkit-transform: translateY(-11px) rotate(-45deg);
+          transform: translateY(-11px) rotate(-45deg);
 }
 
 .drawer-content {
   position: fixed;
-  top: 53px;
+  top: 73px;
   right: -100%;
   width: 100%;
   background-color: #f0f8ff;
@@ -621,14 +622,14 @@ img {
 /* 7) pages（最後にページ別で上書き） */
 /* 2) 変数・mixin（@use as * で直書き可） */
 .hero {
-  padding-top: 113px;
+  padding-top: 90px;
   padding-bottom: 60px;
   width: 100%;
   text-align: center;
 }
 @media screen and (min-width: 768px) {
   .hero {
-    padding-top: 162px;
+    padding-top: 120px;
   }
 }
 
@@ -996,11 +997,9 @@ img {
 /* ========== Config ========== */
 /* ========== Section ========== */
 .order-flow {
-  background: #fff;
   padding: 64px 20px;
-  max-width: 1400px;
-  margin: 0 auto;
   position: relative;
+  background: #f0f8ff;
   z-index: 1;
 }
 
