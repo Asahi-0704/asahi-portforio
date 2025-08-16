@@ -730,6 +730,16 @@ img {
   border-radius: 8px;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.news__content::before {
+  content: "";
+  position: absolute;
+  top: -87px;
+  right: -15px;
+  width: 100px;
+  height: 100px;
+  background: url("../img/logo-icon13夏服.png") no-repeat center center/contain;
 }
 @media screen and (min-width: 768px) {
   .news__content {
@@ -831,6 +841,19 @@ img {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.skill:nth-child(1) {
+  position: relative;
+}
+.skill:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: -87px;
+  right: 8px;
+  width: 100px;
+  height: 100px;
+  background: url("../img/logo-icon12自転車.png") no-repeat center center/contain;
 }
 
 .about__skills-title {
@@ -1007,13 +1030,25 @@ img {
 
 /* Grid */
 .order-flow__steps {
+  margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  position: relative;
+}
+.order-flow__steps::before {
+  content: "";
+  position: absolute;
+  top: -87px;
+  right: -33px;
+  width: 100px;
+  height: 100px;
+  background: url("../img/logo-icon10サングラス頭.png") no-repeat center center/contain;
 }
 
 @media (min-width: 768px) {
   .order-flow__steps {
+    margin-top: 60px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px;
   }
@@ -1140,6 +1175,13 @@ img {
   text-align: center;
   margin-top: 32px;
 }
+@media screen and (min-width: 768px) {
+  .order-flow__button .button {
+    margin-top: 40px;
+    font-size: 16px;
+    width: 300px;
+  }
+}
 
 /* Hover overlay（うっすら） */
 .order-flow__step::before {
@@ -1163,7 +1205,8 @@ img {
   .order-flow {
     padding: 24px;
   }
-  .order-flow__title, .order-flow__step-title {
+  .order-flow__title,
+  .order-flow__step-title {
     color: #000;
   }
   .order-flow__step,

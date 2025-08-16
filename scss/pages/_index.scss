@@ -114,6 +114,17 @@
     padding: 20px 5% 30px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -87px;
+        right: -15px;
+        width: 100px;
+        height: 100px;
+        background: url('../img/logo-icon13夏服.png') no-repeat center center / contain;
+    }
 
     @include mq(md) {
         margin-top: 60px;
@@ -211,6 +222,20 @@
     flex: 1;
 }
 
+.skill:nth-child(1) {
+
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: -87px;
+        right: 8px;
+        width: 100px;
+        height: 100px;
+        background: url('../img/logo-icon12自転車.png') no-repeat center center / contain;
+    }
+}
 .about__skills-title {
     font-size: 18px;
     font-weight: 700;
@@ -347,157 +372,202 @@ $bp-xxl: 1400px;
 
 /* ========== Section ========== */
 .order-flow {
-  background: #fff;
-  padding: 64px 20px;
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+    background: #fff;
+    padding: 64px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 @media (min-width: $bp-md) {
-  .order-flow { padding: 96px 20px; }
+    .order-flow {
+        padding: 96px 20px;
+    }
 }
 
 /* Header */
 .order-flow__header {
-  text-align: center;
-  margin-bottom: 56px;
+    text-align: center;
+    margin-bottom: 56px;
 }
 .order-flow__title {
-  font-size: clamp(28px, 4.8vw, 44px);
-  font-weight: 800;
-  letter-spacing: .02em;
-  color: $text;
-  margin: 0 0 12px;
+    font-size: clamp(28px, 4.8vw, 44px);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: $text;
+    margin: 0 0 12px;
 }
 .order-flow__subtitle {
-  font-size: 15px;
-  color: $muted;
+    font-size: 15px;
+    color: $muted;
 }
 
 /* Grid */
 .order-flow__steps {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -87px;
+        right: -33px;
+        width: 100px;
+        height: 100px;
+        background: url('../img/logo-icon10サングラス頭.png') no-repeat center center / contain;
+    }
 }
 @media (min-width: $bp-md) {
-  .order-flow__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+    .order-flow__steps {
+        margin-top: 60px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+    }
 }
 @media (min-width: $bp-xl) {
-  .order-flow__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .order-flow__steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 /* Card */
 .order-flow__step {
-  position: relative;
-  background: #fff; /* カードは白 */
-  border: 1px solid $border;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.04);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  cursor: default;
+    position: relative;
+    background: #fff; /* カードは白 */
+    border: 1px solid $border;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: default;
 }
 @media (min-width: $bp-md) {
-  .order-flow__step { padding: 28px; }
+    .order-flow__step {
+        padding: 28px;
+    }
 }
 .order-flow__step:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.09);
-  border-color: mix($accent, #fff, 40%);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+    border-color: mix($accent, #fff, 40%);
 }
 
 /* Step header */
 .order-flow__step-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
 }
 @media (max-width: $bp-sm) {
-  .order-flow__step-header { gap: 10px; }
+    .order-flow__step-header {
+        gap: 10px;
+    }
 }
 
 /* Icon bubble */
 .order-flow__step-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, $accent, $accent-2);
-  color: #fff;
-  margin-right: 14px;
-  flex-shrink: 0;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, $accent, $accent-2);
+    color: #fff;
+    margin-right: 14px;
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 @media (min-width: $bp-md) {
-  .order-flow__step-number { width: 60px; height: 60px; margin-right: 16px; }
+    .order-flow__step-number {
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+    }
 }
 
 .order-flow__step-icon {
-  font-size: 18px;
-  line-height: 1;
-  color: #fff;
-  opacity: .95;
+    font-size: 18px;
+    line-height: 1;
+    color: #fff;
+    opacity: 0.95;
 }
 
 /* Titles & text */
 .order-flow__step-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: $text;
-  margin: 0;
-  letter-spacing: .01em;
+    font-size: 18px;
+    font-weight: 700;
+    color: $text;
+    margin: 0;
+    letter-spacing: 0.01em;
 }
 @media (min-width: $bp-md) {
-  .order-flow__step-title { font-size: 20px; }
+    .order-flow__step-title {
+        font-size: 20px;
+    }
 }
 
 .order-flow__step-content {
-  font-size: 14px;
-  line-height: 1.9;
-  color: $muted;
+    font-size: 14px;
+    line-height: 1.9;
+    color: $muted;
 }
 @media (min-width: $bp-md) {
-  .order-flow__step-content { font-size: 15px; }
+    .order-flow__step-content {
+        font-size: 15px;
+    }
 }
 
 /* 強調 */
 .order-flow__step-highlight {
-  color: $accent;
-  font-weight: 700;
+    color: $accent;
+    font-weight: 700;
 }
 
 .order-flow__button {
     text-align: center;
     margin-top: 32px;
+    .button {
+        @include mq(md) {
+            margin-top: 40px;
+            font-size: 16px;
+            width: 300px;
+        }
+    }
 }
 
 /* Hover overlay（うっすら） */
 .order-flow__step::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba($accent, .06), rgba($accent-2, .03));
-  opacity: 0;
-  transition: opacity .25s ease;
-  pointer-events: none;
-  border-radius: inherit;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba($accent, 0.06), rgba($accent-2, 0.03));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    border-radius: inherit;
 }
-.order-flow__step:hover::before { opacity: 1; }
+.order-flow__step:hover::before {
+    opacity: 1;
+}
 
 /* Print-friendly */
 @media print {
-  .order-flow { padding: 24px; }
-  .order-flow__title, .order-flow__step-title { color: #000; }
-  .order-flow__step,
-  .order-flow__note {
-    box-shadow: none;
-    border-color: #ddd;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
+    .order-flow {
+        padding: 24px;
+    }
+    .order-flow__title,
+    .order-flow__step-title {
+        color: #000;
+    }
+    .order-flow__step,
+    .order-flow__note {
+        box-shadow: none;
+        border-color: #ddd;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
 }
-
