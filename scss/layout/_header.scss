@@ -1,0 +1,259 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoint' as *;
+
+// -----------------------------------------
+// header
+// ----------------------------------------
+.header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: $color-main2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 110;
+
+    @include mq('md') {
+        padding-top: 28px;
+        padding-bottom: 8px;
+    }
+}
+
+.header__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mq('md') {
+        max-width: calc(1100px + 30px * 2);
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: start;
+    }
+}
+
+.header__logo {
+}
+
+.header__logo-link {
+    display: block;
+    padding-left: 50px;
+    font-family: $font-family-h1;
+    font-size: 24px;
+    background: linear-gradient(90deg, #ffcc00 0%, #ff8c00 50%, #ff6f91 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    line-height: $line-height-heading;
+    position: relative;
+
+    @include mq('md') {
+        padding-left: 58px;
+        font-size: 32px;
+        letter-spacing: 1.7px;
+    }
+    @include mq('lg') {
+        padding-left: 84px;
+        font-size: 38px;
+        letter-spacing: 1.7px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 26%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: url('/assets/img/logo-icon.png') no-repeat center center;
+        background-size: contain;
+
+        @include mq('md') {
+            width: 54px;
+            height: 54px;
+            top: 24%;
+        }
+        @include mq('lg') {
+            width: 80px;
+            height: 80px;
+            top: 16%;
+        }
+    }
+}
+
+.header__nav {
+    display: none;
+
+    @include mq('md') {
+        display: block;
+    }
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+}
+
+.header__menu-item {
+    position: relative;
+
+    &::before {
+        content: '|';
+        position: absolute;
+        font-size: 20px;
+        left: -3px;
+        top: 42%;
+        transform: translateY(-50%);
+        color: #ddd;
+    }
+    &:first-child::before {
+        display: none;
+    }
+
+    a {
+        display: inline-block;
+        color: $color-text;
+        padding: 10px 20px;
+        transition: opacity 0.3s ease;
+        position: relative;
+        letter-spacing: 1.7px;
+
+        @include mq('md') {
+            padding: 10px 6px;
+            font-size: 14px;
+        }
+        @include mq('lg') {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 4px;
+            height: 1px;
+            background-color: $color-text;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.drawer-icon {
+    width: 28px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    @include mq('md') {
+        display: none;
+    }
+}
+
+.drawer-icon__line {
+    width: 28px;
+    height: 2px;
+    background-color: $color-accent1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header__open.active .drawer-icon__line:nth-child(2) {
+    opacity: 0;
+}
+
+.header__open.active .drawer-icon__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.header__open.active .drawer-icon__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.drawer-content {
+    position: fixed;
+    top: 53px;
+    right: -100%;
+    width: 100%;
+    background-color: $color-main2;
+    transition: right 0.7s ease;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.drawer-content.active {
+    right: 0;
+}
+
+.drawer-content__nav {
+    border: double 8px #cccfd6;
+}
+
+.drawer-content__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 14px 60px 14px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        right: 0;
+        width: calc(90 / 300 * 100vw);
+        height: 150px;
+        background: url('/assets/img/logo-icon14サーフィン.png') no-repeat center center / contain;
+    }
+}
+
+.drawer-content__item {
+    a {
+        position: relative;
+        display: inline-block;
+        font-size: 18px;
+        padding: 10px 20px;
+        transition: opacity 0.3s ease;
+        color: $color-main1;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 4px;
+            height: 1px;
+            background-color: $color-text;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}

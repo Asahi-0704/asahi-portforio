@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://kit.fontawesome.com/eb8946f2d3.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/assets/css/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__inner">
+                <h1 class="header__logo">
+                    <a href="" class="header__logo-link">Asahi-Protforio</a>
+                </h1>
+                <nav class="header__nav" aria-label="ヘッダーメニュー">
+                    <ul class="header__menu">
+                        <li class="header__menu-item"><a href="">お知らせ</a></li>
+                        <li class="header__menu-item"><a href="">スキル</a></li>
+                        <li class="header__menu-item"><a href="">自己紹介</a></li>
+                        <li class="header__menu-item"><a href="">実績紹介</a></li>
+                        <li class="header__menu-item"><a href="">お仕事の流れ</a></li>
+                    </ul>
+                </nav>
+                <button id="js-drawer-icon" class="drawer-icon header__open" aria-label="メニューを開閉">
+                    <span class="drawer-icon__line"></span>
+                    <span class="drawer-icon__line"></span>
+                    <span class="drawer-icon__line"></span>
+                </button>
+            </div>
+        </header>
+        <div id="js-drawer-content" class="drawer-content">
+            <nav class="drawer-content__nav" aria-label="ドロワーメニュー">
+                <ul class="drawer-content__menu">
+                    <li class="drawer-content__item"><a href="">お知らせ</a></li>
+                    <li class="drawer-content__item"><a href="">スキル</a></li>
+                    <li class="drawer-content__item"><a href="">自己紹介</a></li>
+                    <li class="drawer-content__item"><a href="">実績紹介</a></li>
+                    <li class="drawer-content__item"><a href="">お仕事の流れ</a></li>
+                    <li class="drawer-content__item"><a href="">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main class="main">
+            <div class="hero">
+                <div class="hero__inner">
+                    <div class="hero__content">
+                        <h2 class="hero__title">
+                            コーディングのことなら、
+                            <br class="hidden-md" />
+                            おまかせください！
+                        </h2>
+                        <p class="hero__sub-title">親切・丁寧を大切にしている</p>
+                        <p class="hero__description">愛知のWebコーダーです。</p>
+                    </div>
+                    <div class="hero__image">
+                        <img src="/assets/img/logo-icon07マッチョ.png" alt="ヒーローイメージ" />
+                    </div>
+                    <div class="hero__button">
+                        <a href="" class="button">お問い合わせはこちら</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="news section">
+                <div class="news__inner inner">
+                    <div class="news__title">
+                        <div class="heading">
+                            <p class="heading__sub">NEWS</p>
+                            <h2 class="heading__title">お知らせ</h2>
+                        </div>
+                    </div>
+                    <div class="news__content">
+                        <ul class="news__list">
+                            <li class="news__item">
+                                <a href="" class="news__link">
+                                    <time class="news__date" datetime="2023-03-01">2023年3月1日</time>
+                                    <div class="news__item-title">お知らせのタイトルが入ります</div>
+                                </a>
+                            </li>
+                            <li class="news__item">
+                                <a href="" class="news__link">
+                                    <time class="news__date" datetime="2023-03-01">2023年3月1日</time>
+                                    <div class="news__item-title">お知らせのタイトルが入ります</div>
+                                </a>
+                            </li>
+                            <li class="news__item">
+                                <a href="" class="news__link">
+                                    <time class="news__date" datetime="2023-03-01">2023年3月1日</time>
+                                    <div class="news__item-title">お知らせのタイトルが入ります</div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="news__more">
+                            <a href="" class="news__more-link">もっと見る</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about section">
+                <div class="about__inner inner">
+                    <div class="about__title">
+                        <div class="heading">
+                            <p class="heading__sub">about</p>
+                            <h2 class="heading__title">私について</h2>
+                        </div>
+                    </div>
+
+                    <div class="about__content">
+                        <div class="about__skills">
+                            <h2 class="about__skills-title">スキル紹介</h2>
+                            <ul class="about__skills-list">
+                                <li class="skill skill--html">
+                                    <i class="skill__icon fab fa-html5"></i>
+                                    <span class="skill__text">HTML / CSS</span>
+                                </li>
+                                <li class="skill skill--css">
+                                    <i class="skill__icon fab fa-sass"></i>
+                                    <span class="skill__text">SCSS（BEM設計）</span>
+                                </li>
+                                <li class="skill skill--js">
+                                    <i class="skill__icon fab fa-js-square"></i>
+                                    <span class="skill__text">JavaScript / jQuery</span>
+                                </li>
+                                <li class="skill skill--wordpress">
+                                    <i class="skill__icon fab fa-wordpress"></i>
+                                    <span class="skill__text">WordPress</span>
+                                </li>
+                                <li class="skill skill--git">
+                                    <i class="skill__icon fab fa-git-alt"></i>
+                                    <span class="skill__text">Git / Sourcetree によるバージョン管理</span>
+                                </li>
+                                <li class="skill skill--design">
+                                    <i class="skill__icon fas fa-palette"></i>
+                                    <span class="skill__text">対応可能形式：Figma / XD / PDF / AI / PS</span>
+                                </li>
+                                <li class="skill skill--delivery">
+                                    <i class="skill__icon fas fa-shipping-fast"></i>
+                                    <span class="skill__text">納品形式：HTML＋CSS / GitHub / Zip</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="about__profile">
+                            <div class="about__profile-header">
+                                <div class="about__profile-avatar">
+                                    <img src="/assets/img/logo-icon07マッチョ.png" alt="">
+                                </div>
+                                <h2 class="about__profile-title">あさひ</h2>
+                            </div>
+
+                            <div class="about__profile-story">
+                                <p>
+                                    トラックドライバーとして
+                                    <strong>13年間</strong>
+                                    、現場で汗を流してきました。毎日、時間との戦いの中で走り回る日々の中で「このまま年齢を重ねていって、本当に後悔しないか？」と立ち止まるようになりました。
+                                </p>
+
+                                <p>
+                                    <strong>
+                                        もっと柔軟な働き方がしたい。自分の力で、仕事を作っていけるようになりたい。
+                                    </strong>
+                                    そんな想いから、2022年にWeb制作の勉強を始めました。
+                                </p>
+
+                                <p>
+                                    最初は何もわからず、エラーばかりで挫けそうになりました。<br>けれど、一つひとつ学んでいく中で「コードを書く楽しさ」と「出来上がってくる喜び」の面白さを知り、気づけばコードを書くことが日々の習慣になっていました。
+                                </p>
+
+                                <p>
+                                    まだ、コーダーの道は始まったばかりですが、これまで現場で培ってきた
+                                    <strong>「責任感」「段取り力」「言われたことを最後までやりきる力」</strong>
+                                    は、今も自分の軸になっています。
+                                </p>
+
+                                <p>
+                                    華やかな経歴はありませんが、画面の向こうにいる誰かの仕事を支える存在になりたいと本気で思っています。<br>
+                                    <strong>「この人にお願いしてよかった」</strong>
+                                    と言ってもらえるように、日々勉強し、まっすぐ向き合っていきます。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="/assets/js/script.js"></script>
+    </body>
+</html>
