@@ -622,7 +622,7 @@ img {
 /* 7) pages（最後にページ別で上書き） */
 /* 2) 変数・mixin（@use as * で直書き可） */
 .hero {
-  padding-top: 84px;
+  padding-top: 80px;
   padding-bottom: 60px;
   width: 100%;
   text-align: center;
