@@ -660,22 +660,28 @@
     margin-top: 30px;
 }
 
-
 // -----------------------------------------
 // order-flow
 // -----------------------------------------
 /* ========== Config ========== */
-$accent: #007acc;
-$accent-2: darken($accent, 8%);
 $text: #222;
 $muted: #6b7280; // gray-500-ish
 $border: #e5e7eb;
 
 .order-flow {
     padding-top: 60px;
-    background: #fff;
+    padding-bottom: 60px;
+    background-image: conic-gradient(
+        #f0f8ff 90deg,
+        transparent 90deg 180deg,
+        #f0f8ff 180deg 270deg,
+        transparent 270deg
+    );
+    background-size: 100px 100px;
+    background-color: #fff;
     @include mq(md) {
         padding-top: 80px;
+        background-size: 200px 200px;
     }
 }
 
@@ -800,7 +806,7 @@ $border: #e5e7eb;
 
 /* 強調 */
 .order-flow__step-highlight {
-    color: $accent;
+    color: #007acc;
     font-weight: 700;
 }
 
@@ -818,7 +824,7 @@ $border: #e5e7eb;
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba($accent, 0.06), rgba($accent-2, 0.03));
+    background: #007acc;
     opacity: 0;
     transition: opacity 0.25s ease;
     pointer-events: none;

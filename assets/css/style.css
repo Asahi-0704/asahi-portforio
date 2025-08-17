@@ -422,6 +422,395 @@ img {
           transform: scaleX(1);
 }
 
+/* 2) 変数・mixin（@use as * で直書き可） */
+.footer {
+  position: relative;
+  background: #007acc;
+}
+
+.footer__info {
+  padding: 20px 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 6px;
+}
+
+.footer__logo {
+  text-align: center;
+}
+
+.footer__logo-link {
+  display: inline-block;
+  padding: 0 min(60px, 16vw);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: min(40px, 10.6666666667vw);
+  background: -webkit-gradient(linear, left top, right top, from(#ffcc00), color-stop(50%, #ff8c00), to(#ff6f91));
+  background: linear-gradient(90deg, #ffcc00 0%, #ff8c00 50%, #ff6f91 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  line-height: 1.21;
+  position: relative;
+}
+@media screen and (min-width: 992px) {
+  .footer__logo-link {
+    padding: 0 84px;
+    font-size: 54px;
+  }
+}
+.footer__logo-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 29%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: min(60px, 16vw);
+  height: 60px;
+  background: url("../img/logo-icon.png") no-repeat center center;
+  background-size: contain;
+}
+@media screen and (min-width: 992px) {
+  .footer__logo-link::before {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.footer__copy {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .footer__copy {
+    font-size: 14px;
+  }
+}
+
+.footer__page-top-link {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  right: 10px;
+  bottom: 20px;
+  background: url("../img/to-top-icon.svg") no-repeat center center;
+  background-size: contain;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.footer__page-top-link:hover {
+  opacity: 0.7;
+}
+@media screen and (min-width: 768px) {
+  .footer__page-top-link {
+    right: 20px;
+    bottom: 38px;
+  }
+}
+
+/* 2) 変数・mixin（@use as * で直書き可） */
+.contact {
+  padding-top: 80px;
+  padding-bottom: 102px;
+}
+@media screen and (min-width: 768px) {
+  .contact {
+    padding-top: 80px;
+    padding-bottom: 159px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact__inner {
+    max-width: 748px;
+  }
+}
+
+.contact__intro {
+  font-weight: 500;
+}
+
+.contact__form {
+  margin-top: 40px;
+  background-color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .contact__form {
+    margin-top: 60px;
+  }
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 17px;
+}
+@media screen and (min-width: 768px) {
+  .form {
+    gap: 27px;
+  }
+}
+
+.form__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .form__group {
+    gap: 12px;
+  }
+}
+.form__group:nth-child(7) {
+  margin-top: -3px;
+}
+@media screen and (min-width: 768px) {
+  .form__group:nth-child(7) {
+    margin-top: 7px;
+  }
+}
+.form__group:nth-child(1):before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  left: 80%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: url("../img/logo-icon09親子.png") no-repeat center center/contain;
+}
+@media screen and (min-width: 768px) {
+  .form__group:nth-child(1):before {
+    left: 85%;
+    top: -176px;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.form__label {
+  font-size: 14px;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .form__label {
+    font-size: 18px;
+  }
+}
+
+.form__required,
+.form__optional {
+  display: inline-block;
+  font-size: 12px;
+  color: #fff;
+  padding: 2px 8px;
+  margin-left: 12px;
+}
+
+.form__required {
+  background-color: #F6AB36;
+}
+
+.form__optional {
+  background-color: #2aaef0;
+}
+
+.form__input,
+.form__select-input,
+.form__textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+.form__input::-webkit-input-placeholder, .form__select-input::-webkit-input-placeholder, .form__textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+.form__input::-moz-placeholder, .form__select-input::-moz-placeholder, .form__textarea::-moz-placeholder {
+  color: #ccc;
+}
+.form__input:-ms-input-placeholder, .form__select-input:-ms-input-placeholder, .form__textarea:-ms-input-placeholder {
+  color: #ccc;
+}
+.form__input::-ms-input-placeholder, .form__select-input::-ms-input-placeholder, .form__textarea::-ms-input-placeholder {
+  color: #ccc;
+}
+.form__input::placeholder,
+.form__select-input::placeholder,
+.form__textarea::placeholder {
+  color: #ccc;
+}
+
+.form__select-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../img/contact/select-arrow.svg") no-repeat right 16px center;
+  background-size: 11px 7px;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+
+.form__select-input:invalid {
+  color: #ccc;
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+@media screen and (min-width: 768px) {
+  .form__textarea {
+    min-height: 240px;
+  }
+}
+
+.form__agree {
+  margin-top: 21px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .form__agree {
+    margin-top: 16px;
+  }
+}
+
+.form__checkbox-input {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form__checkbox-label {
+  position: relative;
+  padding-left: 38px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .form__checkbox-label {
+    padding-left: 42px;
+  }
+}
+.form__checkbox-label::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border: 1px solid #3e3e3e;
+  background: #fff;
+}
+@media screen and (min-width: 768px) {
+  .form__checkbox-label::before {
+    width: 32px;
+    height: 32px;
+    left: 0;
+  }
+}
+.form__checkbox-label::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
+  background: url("../img/contact/check.svg") no-repeat center center;
+  background-size: contain;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .form__checkbox-label::after {
+    left: 7px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.form__checkbox-label {
+  font-size: 12px;
+}
+@media screen and (min-width: 768px) {
+  .form__checkbox-label {
+    font-size: 16px;
+  }
+}
+
+.form__checkbox-input:checked + .form__checkbox-label::after {
+  opacity: 1;
+}
+
+.form__checkbox-em {
+  font-weight: 700;
+  text-decoration: underline;
+  display: inline-block;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+@media screen and (min-width: 768px) {
+  .form__checkbox-em {
+    padding-right: 6px;
+    padding-left: 0px;
+  }
+}
+
+.form__actions {
+  text-align: center;
+}
+
+.form__submit {
+  margin-top: 25px;
+}
+@media screen and (min-width: 768px) {
+  .form__submit {
+    margin-top: 20px;
+  }
+}
+
 /* 5) components（部品） */
 /* 2) 変数・mixin（@use as * で直書き可） */
 /* ===== Theme vars ===== */
@@ -567,6 +956,7 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
   -webkit-box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
           box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
+  min-width: 200px;
 }
 @media screen and (min-width: 768px) {
   .button {
@@ -1349,11 +1739,15 @@ img {
 /* ========== Config ========== */
 .order-flow {
   padding-top: 60px;
-  background: #fff;
+  padding-bottom: 60px;
+  background-image: conic-gradient(#f0f8ff 90deg, transparent 90deg 180deg, #f0f8ff 180deg 270deg, transparent 270deg);
+  background-size: 100px 100px;
+  background-color: #fff;
 }
 @media screen and (min-width: 768px) {
   .order-flow {
     padding-top: 80px;
+    background-size: 200px 200px;
   }
 }
 
@@ -1533,7 +1927,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 122, 204, 0.06), rgba(0, 97.6, 163.2, 0.03));
+  background: #007acc;
   opacity: 0;
   -webkit-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Asahi-Web</title>
         <script src="https://kit.fontawesome.com/eb8946f2d3.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,15 +19,14 @@
         <header class="header">
             <div class="header__inner">
                 <h1 class="header__logo">
-                    <a href="" class="header__logo-link">Asahi-Protforio</a>
+                    <a href="/" class="header__logo-link">Asahi-Web</a>
                 </h1>
                 <nav class="header__nav" aria-label="ヘッダーメニュー">
                     <ul class="header__menu">
-                        <li class="header__menu-item"><a href="">お知らせ</a></li>
-                        <li class="header__menu-item"><a href="">実績</a></li>
-                        <li class="header__menu-item"><a href="">スキル</a></li>
-                        <li class="header__menu-item"><a href="">自己紹介</a></li>
-                        <li class="header__menu-item"><a href="">ご依頼の流れ</a></li>
+                        <li class="header__menu-item"><a href="#news">お知らせ</a></li>
+                        <li class="header__menu-item"><a href="#works">実績</a></li>
+                        <li class="header__menu-item"><a href="#about">私について</a></li>
+                        <li class="header__menu-item"><a href="#order-flow">ご依頼の流れ</a></li>
                     </ul>
                 </nav>
                 <button id="js-drawer-icon" class="drawer-icon header__open" aria-label="メニューを開閉">
@@ -40,12 +39,11 @@
         <div id="js-drawer-content" class="drawer-content">
             <nav class="drawer-content__nav" aria-label="ドロワーメニュー">
                 <ul class="drawer-content__menu">
-                    <li class="drawer-content__item"><a href="">お知らせ</a></li>
-                    <li class="drawer-content__item"><a href="">実績紹介</a></li>
-                    <li class="drawer-content__item"><a href="">スキル</a></li>
-                    <li class="drawer-content__item"><a href="">自己紹介</a></li>
-                    <li class="drawer-content__item"><a href="">ご依頼の流れ</a></li>
-                    <li class="drawer-content__item"><a href="">お問い合わせ</a></li>
+                    <li class="drawer-content__item"><a href="#news">お知らせ</a></li>
+                    <li class="drawer-content__item"><a href="#works">実績紹介</a></li>
+                    <li class="drawer-content__item"><a href="#about">私について</a></li>
+                    <li class="drawer-content__item"><a href="#order-flow">ご依頼の流れ</a></li>
+                    <li class="drawer-content__item"><a href="#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -65,12 +63,12 @@
                         <img src="./assets/img/logo-icon07マッチョ.png" alt="ヒーローイメージ" />
                     </div>
                     <div class="hero__button">
-                        <a href="" class="button">お問い合わせはこちら</a>
+                        <a href="#contact" class="button">お問い合わせはこちら</a>
                     </div>
                 </div>
             </div>
 
-            <section class="news section">
+            <section id="news" class="news section">
                 <div class="news__inner inner">
                     <div class="news__title">
                         <div class="heading">
@@ -105,7 +103,7 @@
                     </div>
                 </div>
             </section>
-            <section class="works section">
+            <section id="works" class="works section">
                 <div class="works__inner inner">
                     <div class="works__title">
                         <div class="heading">
@@ -180,7 +178,7 @@
                     </div>
                 </div>
             </section>
-            <section class="about section">
+            <section id="about" class="about section">
                 <div class="about__inner inner">
                     <div class="about__title">
                         <div class="heading">
@@ -245,7 +243,8 @@
                                     <strong>正確な再現</strong>
                                     と、読みやすく保守しやすい
                                     <strong>BEM＋SCSS設計</strong>
-                                    が得意です。<br />
+                                    が得意です。
+                                    <br />
                                     <strong>2022年からWeb制作の勉強を開始</strong>
                                     し、会社員と並行しながら取り組んでいます。
                                 </p>
@@ -285,14 +284,14 @@
                                     まずはお気軽にご相談ください。
                                 </p>
                                 <div class="about__button">
-                                    <a href="" class="button">お問い合わせ</a>
+                                    <a href="#contact" class="button">お問い合わせ</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="order-flow">
+            <section id="order-flow" class="order-flow">
                 <div class="order-flow__inner inner">
                     <div class="heading">
                         <p class="heading__sub">flow</p>
@@ -457,12 +456,151 @@
                             </div>
                         </div>
                     </div>
-                    <div class="order-flow__button">
+                    <!-- <div class="order-flow__button">
                         <a href="#" class="button">お見積もり依頼する</a>
+                    </div> -->
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <div class="contact__inner inner">
+                    <p class="contact__intro"></p>
+                    <div class="contact__title">
+                        <div class="heading">
+                            <p class="heading__sub">mail</p>
+                            <h2 class="heading__title">お問い合わせ</h2>
+                        </div>
                     </div>
+                    <form action="" method="post" class="contact__form form" novalidate>
+                        <!-- お名前 -->
+                        <div class="form__group">
+                            <label for="name" class="form__label">
+                                お名前
+                                <span class="form__required">必須</span>
+                            </label>
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                class="form__input"
+                                placeholder="例）あさひ"
+                                required
+                            />
+                        </div>
+
+                        <!-- フリガナ -->
+                        <div class="form__group">
+                            <label for="kana" class="form__label">
+                                お名前（フリガナ）
+                                <span class="form__required">必須</span>
+                            </label>
+                            <input
+                                id="kana"
+                                name="kana"
+                                type="text"
+                                class="form__input"
+                                placeholder="例）アサヒ"
+                                required
+                            />
+                        </div>
+
+                        <!-- 電話番号 -->
+                        <div class="form__group">
+                            <label for="tel" class="form__label">
+                                電話番号
+                                <span class="form__optional">任意</span>
+                            </label>
+                            <input
+                                id="tel"
+                                name="tel"
+                                type="tel"
+                                class="form__input"
+                                inputmode="tel"
+                                placeholder="例）0312345678"
+                            />
+                        </div>
+
+                        <!-- メール -->
+                        <div class="form__group">
+                            <label for="email" class="form__label">
+                                メールアドレス
+                                <span class="form__required">必須</span>
+                            </label>
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                class="form__input"
+                                placeholder="例）info@example.com"
+                                required
+                            />
+                        </div>
+
+                        <!-- ご用件 -->
+                        <div class="form__group">
+                            <label for="topic" class="form__label">
+                                ご用件
+                                <span class="form__required">必須</span>
+                            </label>
+                            <div class="form__select">
+                                <select id="topic" name="topic" class="form__select-input" required>
+                                    <option value="" selected disabled>ご選択ください</option>
+                                    <option value="apply">お申し込み</option>
+                                    <option value="question">ご質問</option>
+                                    <option value="other">その他</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- ご用件の詳細 -->
+                        <div class="form__group">
+                            <label for="message" class="form__label">
+                                ご用件の詳細
+                                <span class="form__required">必須</span>
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form__textarea"
+                                rows="6"
+                                placeholder="ご自由にご記入ください。"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <!-- 同意チェック -->
+                        <div class="form__agree">
+                            <label class="form__checkbox">
+                                <input type="checkbox" name="agree" class="form__checkbox-input" required />
+                                <span class="form__checkbox-label">お間違いがなければ、チェックを入れてください。</span>
+                            </label>
+                        </div>
+
+                        <!-- 送信 -->
+                        <div class="form__actions">
+                            <button type="submit" class="form__submit">
+                                <span class="button">送　信</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </section>
         </main>
+        <footer class="footer">
+            <div class="footer__info">
+                <div class="footer__logo">
+                    <a href="/" class="footer__logo-link">Asahi-Web</a>
+                </div>
+                <!-- <address class="footer__address">
+                    〒999-9999　愛知県<br />
+                    TEL　00-123-4567<br />
+                    FAX　00-123-4568
+                </address> -->
+                <div class="footer__copy">&copy;2025 Asahi-Web. All Rights Reserved.</div>
+            </div>
+            <div class="footer__pagetop">
+                <a href="#top" class="footer__page-top-link" aria-label="ページトップに戻る"></a>
+            </div>
+        </footer>
         <script src="./assets/js/script.js"></script>
     </body>
 </html>

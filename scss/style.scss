@@ -12,7 +12,8 @@
 
 /* 4) layout（サイト全体の骨格） */
 @use 'layout/header';
-// @use 'layout/footer';
+@use 'layout/footer';
+@use 'layout/contact';
 
 /* 5) components（部品） */
 @use 'components/heading';
