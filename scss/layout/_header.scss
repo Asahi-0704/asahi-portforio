@@ -43,9 +43,9 @@
 
 .header__logo-link {
     display: block;
-    padding-left: 60px;
+    padding-left: min(60px,calc(100vw * 60 / 375));
     font-family: $font-family-h1;
-    font-size: 40px;
+    font-size: min(40px,calc(100vw * 40 / 375));
     background: linear-gradient(90deg, #ffcc00 0%, #ff8c00 50%, #ff6f91 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -54,15 +54,9 @@
     line-height: $line-height-heading;
     position: relative;
 
-    @include mq('md') {
-        padding-left: 58px;
-        font-size: 32px;
-        letter-spacing: 1.7px;
-    }
     @include mq('lg') {
         padding-left: 84px;
-        font-size: 38px;
-        letter-spacing: 1.7px;
+        font-size: 54px;
     }
 
     &::before {
@@ -71,20 +65,14 @@
         left: 0;
         top: 29%;
         transform: translateY(-50%);
-        width: 60px;
+        width: min(60px,calc(100vw * 60 / 375));
         height: 60px;
         background: url('../img/logo-icon.png') no-repeat center center;
         background-size: contain;
 
-        @include mq('md') {
-            width: 54px;
-            height: 54px;
-            top: 24%;
-        }
         @include mq('lg') {
             width: 80px;
             height: 80px;
-            top: 16%;
         }
     }
 }
@@ -128,11 +116,11 @@
 
         @include mq('md') {
             padding: 10px 6px;
-            font-size: 14px;
+            font-size: 16px;
         }
         @include mq('lg') {
             padding: 10px 15px;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         &:hover {

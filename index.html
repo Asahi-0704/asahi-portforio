@@ -26,8 +26,8 @@
                         <li class="header__menu-item"><a href="">お知らせ</a></li>
                         <li class="header__menu-item"><a href="">スキル</a></li>
                         <li class="header__menu-item"><a href="">自己紹介</a></li>
-                        <li class="header__menu-item"><a href="">実績紹介</a></li>
-                        <li class="header__menu-item"><a href="">お仕事の流れ</a></li>
+                        <li class="header__menu-item"><a href="">実績</a></li>
+                        <li class="header__menu-item"><a href="">ご依頼の流れ</a></li>
                     </ul>
                 </nav>
                 <button id="js-drawer-icon" class="drawer-icon header__open" aria-label="メニューを開閉">
@@ -44,18 +44,18 @@
                     <li class="drawer-content__item"><a href="">スキル</a></li>
                     <li class="drawer-content__item"><a href="">自己紹介</a></li>
                     <li class="drawer-content__item"><a href="">実績紹介</a></li>
-                    <li class="drawer-content__item"><a href="">お仕事の流れ</a></li>
+                    <li class="drawer-content__item"><a href="">ご依頼の流れ</a></li>
                     <li class="drawer-content__item"><a href="">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
         <main class="main">
             <div class="hero">
-                <div class="hero__inner">
+                <div class="hero__inner inner">
                     <div class="hero__content">
                         <h2 class="hero__title">
                             コーディングのことなら
-                            <br class="hidden-md" />
+                            <br />
                             おまかせください！
                         </h2>
                         <p class="hero__sub-title">親切・丁寧を大切にしている</p>
@@ -117,7 +117,7 @@
 
                     <div class="about__content">
                         <div class="about__skills">
-                            <h2 class="about__skills-title">スキル</h2>
+                            <h2 class="about__skills-title">スキル一覧</h2>
                             <ul class="about__skills-list">
                                 <li class="skill skill--html">
                                     <i class="skill__icon fab fa-html5"></i>
@@ -180,7 +180,7 @@
                                     主にできることは、デザインカンプからのコーディング全般。対応フォーマットは
                                     Figma／XD／PDF／Illustrator／Photoshop。
                                     <br />
-                                    <strong>SEOを意識したセマンティックなマークアップ</strong>
+                                    <strong>SEOを意識したセマークアップ</strong>
                                     、 HTML／CSS（SCSS）BEM設計でのページ構築、
                                     <strong>レスポンシブ設計</strong>
                                     、軽量なアニメーション、
@@ -201,8 +201,8 @@
                                     <strong>ACFでの編集画面設計</strong>
                                     など対応可能です。
                                     <br />
-                                    会社員と並行のため稼働は
-                                    <strong>平日夜・土日中心／週あたり目安20時間</strong>
+                                    稼働は
+                                    <strong>平日夜・土日中心／週あたり平均20時間</strong>
                                     です。
                                     <br />
                                     <strong>1ページのテスト発注</strong>
@@ -215,6 +215,57 @@
                     </div>
                 </div>
             </section>
+            <section class="works section">
+                <div class="works__inner inner">
+                    <div class="works__title">
+                        <div class="heading">
+                            <p class="heading__sub">work</p>
+                            <h2 class="heading__title">制作実績</h2>
+                        </div>
+                    </div>
+                    <div class="works__content">
+                        <!-- ラジオを先に置く（見た目はCSSで隠す） -->
+                        <input type="radio" name="works" id="tab-all" class="visually-hidden" checked />
+                        <input type="radio" name="works" id="tab-wp" class="visually-hidden" />
+                        <input type="radio" name="works" id="tab-coding" class="visually-hidden" />
+                        <div class="works__tabs" role="tablist">
+                            <label class="works__tab" for="tab-all">全て</label>
+                            <label class="works__tab" for="tab-wp">WordPress</label>
+                            <label class="works__tab" for="tab-coding">
+                                HTML
+                                <br />
+                                コーディング
+                            </label>
+                        </div>
+                        <ul class="works__grid">
+                            <li class="work-card is-wp">
+                                <a href="#">
+                                    <div class="work-card__thumb">
+                                        <img src="./assets/img/work-card01.jpg" alt="" />
+                                    </div>
+                                    <p>WP 実績A</p>
+                                </a>
+                            </li>
+                            <li class="work-card is-coding">
+                                <a href="#">
+                                    <div class="work-card__thumb">
+                                        <img src="./assets/img/work-card02.jpg" alt="" />
+                                    </div>
+                                    <p>コーディング 実績B</p>
+                                </a>
+                            </li>
+                            <li class="work-card is-wp is-coding">
+                                <a href="#">
+                                    <div class="work-card__thumb">
+                                        <img src="..." alt="" />
+                                    </div>
+                                    <p>両方 実績C</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
             <section class="order-flow">
                 <div class="order-flow__inner inner">
                     <div class="heading">
@@ -224,10 +275,13 @@
                     <div class="order-flow__steps">
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-comments order-flow__step-icon"></i>
                                 </div>
-                                <h3 class="order-flow__step-title">①ご相談・ヒアリング</h3>
+                                <h3 class="order-flow__step-title">
+                                    <span>①</span>
+                                    お問い合わせ
+                                </h3>
                             </div>
                             <div class="order-flow__step-content">
                                 まずは、ご希望の内容・納期・ご予算感などをお伺いします。
@@ -238,10 +292,13 @@
 
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-desktop order-flow__step-icon"></i>
                                 </div>
-                                <h3 class="order-flow__step-title">②デザインカンプ確認</h3>
+                                <h3 class="order-flow__step-title">
+                                    <span>②</span>
+                                    デザインカンプ確認
+                                </h3>
                             </div>
                             <div class="order-flow__step-content">
                                 PC・スマホ・タブレットなど、対応デバイスの種類、
@@ -254,10 +311,13 @@
 
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-calculator order-flow__step-icon"></i>
                                 </div>
-                                <h3 class="order-flow__step-title">③お見積もり・納期のご提案</h3>
+                                <h3 class="order-flow__step-title">
+                                    <span>③</span>
+                                    お見積もり・納期のご提案
+                                </h3>
                             </div>
                             <div class="order-flow__step-content">
                                 確認内容をもとに、作業内容に応じたお見積もりと納期をご提示します。
@@ -270,10 +330,13 @@
 
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-code order-flow__step-icon"></i>
                                 </div>
-                                <h3 class="order-flow__step-title">④コーディング作業</h3>
+                                <h3 class="order-flow__step-title">
+                                    <span>④</span>
+                                    コーディング
+                                </h3>
                             </div>
                             <div class="order-flow__step-content">
                                 着手金のご入金確認後、コーディング作業に入らせていただきます。
@@ -284,10 +347,13 @@
 
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-search order-flow__step-icon"></i>
                                 </div>
-                                <h3 class="order-flow__step-title">⑤納品前チェック</h3>
+                                <h3 class="order-flow__step-title">
+                                    <span>⑤</span>
+                                    品質チェック
+                                </h3>
                             </div>
                             <div class="order-flow__step-content">
                                 スマートフォン、タブレット、PCなど複数デバイスにて動作とデザインを細かくチェックし、
@@ -298,10 +364,13 @@
 
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-eye order-flow__step-icon"></i>
                                 </div>
-                                <h3 class="order-flow__step-title">⑥ご確認</h3>
+                                <h3 class="order-flow__step-title">
+                                    <span>⑥</span>
+                                    ご確認
+                                </h3>
                             </div>
                             <div class="order-flow__step-content">
                                 表示・挙動をご確認いただき、必要であれば修正対応もいたします。
@@ -310,34 +379,41 @@
 
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-credit-card order-flow__step-icon"></i>
                                 </div>
-                                <h3 class="order-flow__step-title">⑦残金のお支払い</h3>
+                                <h3 class="order-flow__step-title">
+                                    <span>⑦</span>
+                                    残金お支払い
+                                </h3>
                             </div>
                             <div class="order-flow__step-content">
                                 最終確認が完了しましたら、
                                 <span class="order-flow__step-highlight">残額50%をご入金いただきます</span>
-                                。<br />ご入金確認後に領収書を発行いたします。
+                                。
+                                <br />
+                                ご入金確認後に領収書を発行いたします。
                             </div>
                         </div>
 
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-download order-flow__step-icon"></i>
                                 </div>
-                                <h3 class="order-flow__step-title">⑧納品</h3>
+                                <h3 class="order-flow__step-title">
+                                    <span>⑧</span>
+                                    納品
+                                </h3>
                             </div>
                             <div class="order-flow__step-content">
-                                ご入金確認後、GitHubやZIPファイルなど、
-                                ご希望の形式で納品し、すべて完了となります。
+                                ご入金確認後、GitHubやZIPファイルなど、 ご希望の形式で納品し、すべて完了となります。
                             </div>
                         </div>
 
                         <div class="order-flow__step">
                             <div class="order-flow__step-header">
-                                <div class="order-flow__step-number">
+                                <div class="order-flow__step-icon">
                                     <i class="fas fa-tools order-flow__step-icon"></i>
                                 </div>
                                 <h3 class="order-flow__step-title">修正対応について</h3>

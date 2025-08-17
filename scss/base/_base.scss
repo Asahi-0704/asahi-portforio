@@ -10,17 +10,6 @@ body {
     line-height: $line-height-base;
     color: $color-text;
     font-family: $font-family-ja;
-
-    .hidden-sm {
-        @include mq(sm) {
-            display: none;
-        }
-    }
-    .hidden-md {
-        @include mq(md) {
-            display: none;
-        }
-    }
 }
 
 img {
@@ -53,3 +42,4 @@ img {
         padding: 80px 0;
     }
 }
+
