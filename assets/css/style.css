@@ -1220,6 +1220,16 @@ img {
             transform: translateY(-87%); /* 画像に応じて -10%〜-25% を調整 */
   }
 }
+@media screen and (min-width: 576px) and (hover: none) {
+  .work-card:active .work-card__thumb img,
+  .work-card:focus .work-card__thumb img {
+    -o-object-position: bottom center;
+       object-position: bottom center;
+    -webkit-transition: object-position 6s linear;
+    transition: object-position 6s linear;
+    transition: object-position 6s linear, -o-object-position 6s linear;
+  }
+}
 /* モーション配慮 */
 @media (prefers-reduced-motion: reduce) {
   .work-card__thumb img {

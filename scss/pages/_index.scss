@@ -543,6 +543,15 @@
         transform: translateY(-87%); /* 画像に応じて -10%〜-25% を調整 */
     }
 }
+@include mq(sm) {
+    @media (hover: none) {
+  .work-card:active .work-card__thumb img,
+  .work-card:focus .work-card__thumb img {
+    object-position: bottom center;
+    transition: object-position 6s linear;
+  }
+}
+}
 
 /* モーション配慮 */
 @media (prefers-reduced-motion: reduce) {
