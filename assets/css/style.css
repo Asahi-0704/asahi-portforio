@@ -1199,6 +1199,12 @@ img {
   border-radius: 4px; /* a の角丸に合わせたい場合 */
   background: #eee;
   position: relative;
+  z-index: -2;
+}
+@media screen and (min-width: 768px) {
+  .work-card__thumb {
+    z-index: 0;
+  }
 }
 
 .work-card__pan {
@@ -1227,6 +1233,7 @@ img {
   transition: transform 4s linear;
   transition: transform 4s linear, -webkit-transform 4s linear; /* ← ホバーでゆっくり動く */
   will-change: transform;
+  z-index: -1;
 }
 
 /* ホバーで下側を見せる（＝画像を上にスライド） */
@@ -1285,7 +1292,6 @@ img {
     right: 0;
     height: 16px;
     pointer-events: none;
-    z-index: 1;
   }
 }
 @media screen and (hover: none) and (min-width: 768px) {
@@ -1293,7 +1299,6 @@ img {
     top: 0;
     background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(rgba(255, 255, 255, 0)));
     background: linear-gradient(#ffffff, rgba(255, 255, 255, 0));
-    z-index: 1;
   }
 }
 @media screen and (hover: none) and (min-width: 768px) {
@@ -1301,7 +1306,6 @@ img {
     bottom: 0;
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#ffffff));
     background: linear-gradient(rgba(255, 255, 255, 0), #ffffff);
-    z-index: 1;
   }
 }
 /* ========= フィルタ（CSSだけ） ========= */

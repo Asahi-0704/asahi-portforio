@@ -528,6 +528,10 @@
     border-radius: 4px; /* a の角丸に合わせたい場合 */
     background: #eee;
     position: relative;
+    z-index: -2;
+    @include mq(md) {
+        z-index: 0;
+    }
 }
 
 .work-card__pan {
@@ -548,6 +552,7 @@
     transform: translateY(0);
     transition: transform 4s linear; /* ← ホバーでゆっくり動く */
     will-change: transform;
+    z-index: -1;
 }
 
 /* ホバーで下側を見せる（＝画像を上にスライド） */
@@ -601,21 +606,18 @@
             right: 0;
             height: 16px;
             pointer-events: none;
-            z-index: 1;
         }
     }
     .work-card__thumb::before {
         @include mq(md) {
             top: 0;
             background: linear-gradient(#ffffff, rgba(255, 255, 255, 0));
-            z-index: 1;
         }
     }
     .work-card__thumb::after {
         @include mq(md) {
             bottom: 0;
             background: linear-gradient(rgba(255, 255, 255, 0), #ffffff);
-            z-index: 1;
         }
     }
 }
