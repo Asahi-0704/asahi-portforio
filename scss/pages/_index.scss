@@ -518,14 +518,23 @@
 
 /* クリップ用の箱 */
 .work-card__thumb {
-    aspect-ratio: 16 / 16;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 4px; /* a の角丸に合わせたい場合 */
     background: #eee;
+    position: relative;
+}
+
+.work-card__pan {
+    height: 100%;
+    overflow: auto;
+    @include mq(md) {
+        overflow: hidden;
+    }
 }
 
 /* 画像：最初は上を見せる */
-.work-card__thumb img {
+.work-card__pan img {
     display: block;
     width: 100%;
     height: auto;
@@ -538,26 +547,68 @@
 
 /* ホバーで下側を見せる（＝画像を上にスライド） */
 @media (hover: hover) {
-    .work-card:hover .work-card__thumb img,
-    .work-card a:hover .work-card__thumb img {
+    .work-card:hover .work-card__pan img,
+    .work-card a:hover .work-card__pan img {
         transform: translateY(-87%); /* 画像に応じて -10%〜-25% を調整 */
     }
-}
-@include mq(sm) {
-    @media (hover: none) {
-  .work-card:active .work-card__thumb img,
-  .work-card:focus .work-card__thumb img {
-    object-position: bottom center;
-    transition: object-position 6s linear;
-  }
-}
 }
 
 /* モーション配慮 */
 @media (prefers-reduced-motion: reduce) {
-    .work-card__thumb img {
+    .work-card__pan img {
         transition: none;
         transform: none;
+    }
+}
+@media (hover: none) {
+    .work-card__pan {
+        @include mq(md) {
+            overflow: auto; /* 指でスクロール可能に */
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+    }
+    .work-card__pan::-webkit-scrollbar {
+        @include mq(md) {
+            display: none;
+        }
+    } /* iOS/Chrome */
+
+    /* スマホでは “画像を大きく” して必ずはみ出させ、スクロール余地を作る */
+    .work-card__pan img {
+        @include mq(md) {
+            width: 100%;
+            height: auto; /* 自然比率で伸縮 */
+            min-height: 130%; /* ★ これで縦にオーバーフローを確保（調整OK） */
+            object-fit: contain; /* 画像の縦の情報を見せたいので contain に */
+            transform: none; /* ホバーのアニメは無効化 */
+            transition: none;
+        }
+    }
+
+    /* 上下に薄いグラデーションで “スクロールできそう” なヒント（任意） */
+    .work-card__thumb::before,
+    .work-card__thumb::after {
+        @include mq(md) {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 16px;
+            pointer-events: none;
+        }
+    }
+    .work-card__thumb::before {
+        @include mq(md) {
+            top: 0;
+            background: linear-gradient(#ffffff, rgba(255, 255, 255, 0));
+        }
+    }
+    .work-card__thumb::after {
+        @include mq(md) {
+            bottom: 0;
+            background: linear-gradient(rgba(255, 255, 255, 0), #ffffff);
+        }
     }
 }
 

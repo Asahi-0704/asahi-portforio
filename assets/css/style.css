@@ -1188,14 +1188,25 @@ img {
 
 /* クリップ用の箱 */
 .work-card__thumb {
-  aspect-ratio: 16/16;
+  aspect-ratio: 1/1;
   overflow: hidden;
   border-radius: 4px; /* a の角丸に合わせたい場合 */
   background: #eee;
+  position: relative;
+}
+
+.work-card__pan {
+  height: 100%;
+  overflow: auto;
+}
+@media screen and (min-width: 768px) {
+  .work-card__pan {
+    overflow: hidden;
+  }
 }
 
 /* 画像：最初は上を見せる */
-.work-card__thumb img {
+.work-card__pan img {
   display: block;
   width: 100%;
   height: auto;
@@ -1214,29 +1225,74 @@ img {
 
 /* ホバーで下側を見せる（＝画像を上にスライド） */
 @media (hover: hover) {
-  .work-card:hover .work-card__thumb img,
-  .work-card a:hover .work-card__thumb img {
+  .work-card:hover .work-card__pan img,
+  .work-card a:hover .work-card__pan img {
     -webkit-transform: translateY(-87%);
             transform: translateY(-87%); /* 画像に応じて -10%〜-25% を調整 */
   }
 }
-@media screen and (min-width: 576px) and (hover: none) {
-  .work-card:active .work-card__thumb img,
-  .work-card:focus .work-card__thumb img {
-    -o-object-position: bottom center;
-       object-position: bottom center;
-    -webkit-transition: object-position 6s linear;
-    transition: object-position 6s linear;
-    transition: object-position 6s linear, -o-object-position 6s linear;
-  }
-}
 /* モーション配慮 */
 @media (prefers-reduced-motion: reduce) {
-  .work-card__thumb img {
+  .work-card__pan img {
     -webkit-transition: none;
     transition: none;
     -webkit-transform: none;
             transform: none;
+  }
+}
+@media (hover: none) {
+  /* iOS/Chrome */
+  /* スマホでは “画像を大きく” して必ずはみ出させ、スクロール余地を作る */
+  /* 上下に薄いグラデーションで “スクロールできそう” なヒント（任意） */
+}
+@media screen and (hover: none) and (min-width: 768px) {
+  .work-card__pan {
+    overflow: auto; /* 指でスクロール可能に */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+}
+@media screen and (hover: none) and (min-width: 768px) {
+  .work-card__pan::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and (hover: none) and (min-width: 768px) {
+  .work-card__pan img {
+    width: 100%;
+    height: auto; /* 自然比率で伸縮 */
+    min-height: 130%; /* ★ これで縦にオーバーフローを確保（調整OK） */
+    -o-object-fit: contain;
+       object-fit: contain; /* 画像の縦の情報を見せたいので contain に */
+    -webkit-transform: none;
+            transform: none; /* ホバーのアニメは無効化 */
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+@media screen and (hover: none) and (min-width: 768px) {
+  .work-card__thumb::before,
+  .work-card__thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 16px;
+    pointer-events: none;
+  }
+}
+@media screen and (hover: none) and (min-width: 768px) {
+  .work-card__thumb::before {
+    top: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(#ffffff, rgba(255, 255, 255, 0));
+  }
+}
+@media screen and (hover: none) and (min-width: 768px) {
+  .work-card__thumb::after {
+    bottom: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#ffffff));
+    background: linear-gradient(rgba(255, 255, 255, 0), #ffffff);
   }
 }
 /* ========= フィルタ（CSSだけ） ========= */
