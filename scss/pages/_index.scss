@@ -435,6 +435,11 @@
 }
 .works__content {
     margin-top: 30px;
+    padding: 0 20px;
+
+    @include mq(md) {
+        padding: 0;
+    }
 }
 
 /* ========= タブ ========= */
