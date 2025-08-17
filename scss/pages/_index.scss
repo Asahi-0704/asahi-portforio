@@ -601,18 +601,21 @@
             right: 0;
             height: 16px;
             pointer-events: none;
+            z-index: 1;
         }
     }
     .work-card__thumb::before {
         @include mq(md) {
             top: 0;
             background: linear-gradient(#ffffff, rgba(255, 255, 255, 0));
+            z-index: 1;
         }
     }
     .work-card__thumb::after {
         @include mq(md) {
             bottom: 0;
             background: linear-gradient(rgba(255, 255, 255, 0), #ffffff);
+            z-index: 1;
         }
     }
 }
