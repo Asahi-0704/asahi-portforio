@@ -1,21 +1,97 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const drawerIcon = document.getElementById('js-drawer-icon');
-    const drawerContent = document.getElementById('js-drawer-content');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const drawerIcon = document.getElementById('js-drawer-icon');
+//     const drawerContent = document.getElementById('js-drawer-content');
 
-    drawerIcon.addEventListener('click', function () {
-        // Toggle active class on the drawer icon
-        drawerIcon.classList.toggle('active');
-        // Toggle active class on the drawer content
-        drawerContent.classList.toggle('active');
-    });
+//     drawerIcon.addEventListener('click', function () {
+//         // Toggle active class on the drawer icon
+//         drawerIcon.classList.toggle('active');
+//         // Toggle active class on the drawer content
+//         drawerContent.classList.toggle('active');
+//     });
 
-    // Close the drawer when clicking outside of it
-    document.addEventListener('click', function (event) {
-        if (!drawerContent.contains(event.target) && !drawerIcon.contains(event.target)) {
-            drawerIcon.classList.remove('active');
-            drawerContent.classList.remove('active');
-        }
-    });
+//     // Close the drawer when clicking outside of it
+//     document.addEventListener('click', function (event) {
+//         if (!drawerContent.contains(event.target) && !drawerIcon.contains(event.target)) {
+//             drawerIcon.classList.remove('active');
+//             drawerContent.classList.remove('active');
+//         }
+//     });
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const drawerIcon    = document.getElementById('js-drawer-icon');
+  const drawerContent = document.getElementById('js-drawer-content');
+  const drawerLinks   = drawerContent.querySelectorAll('a[href]');
+  let scrollY = 0;
+
+  const openDrawer = () => {
+    drawerIcon.classList.add('active');
+    drawerContent.classList.add('active');
+
+    // 背景スクロール固定（位置ずれ無し）
+    scrollY = window.scrollY || window.pageYOffset;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+  };
+
+  const closeDrawer = () => {
+    drawerIcon.classList.remove('active');
+    drawerContent.classList.remove('active');
+
+    // スクロール固定解除（元の位置に戻す）
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollY);
+  };
+
+  const toggleDrawer = () => {
+    if (drawerContent.classList.contains('active')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  };
+
+  // ハンバーガー操作
+  drawerIcon.addEventListener('click', (e) => {
+    e.stopPropagation(); // ドキュメントへの伝播を防止
+    toggleDrawer();
+  });
+
+  // 外側クリックで閉じる
+  document.addEventListener('click', (e) => {
+    // 開いていて、かつアイコン/中身の外をクリックしたら閉じる
+    if (drawerContent.classList.contains('active') &&
+        !drawerContent.contains(e.target) &&
+        !drawerIcon.contains(e.target)) {
+      closeDrawer();
+    }
+  });
+
+  // Escキーで閉じる（アクセシビリティ向上）
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawerContent.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+
+  // メニュー内リンクを押したら必ず閉じる
+  drawerLinks.forEach((a) => {
+    a.addEventListener('click', () => {
+      // アンカー(#news など)でも一旦閉じてからスクロールへ
+      closeDrawer();
+    }, { passive: true });
+  });
+
+  // ドロワー内のスクロールは許可、背景は不可にしたい時の保険
+  drawerContent.addEventListener('wheel', (e) => e.stopPropagation(), { passive: true });
+  drawerContent.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
 });
 
 
