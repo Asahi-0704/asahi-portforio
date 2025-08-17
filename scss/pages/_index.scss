@@ -825,16 +825,3 @@ $border: #e5e7eb;
     }
 }
 
-.order-flow__step::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: #007acc;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    pointer-events: none;
-    border-radius: inherit;
-}
-.order-flow__step:hover::before {
-    opacity: 1;
-}

@@ -1933,19 +1933,3 @@ img {
     margin-top: 40px;
   }
 }
-
-.order-flow__step::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #007acc;
-  opacity: 0;
-  -webkit-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-.order-flow__step:hover::before {
-  opacity: 1;
-}
