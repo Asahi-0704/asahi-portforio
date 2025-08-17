@@ -221,197 +221,6 @@
 }
 
 // -----------------------------------------
-// about
-// -----------------------------------------
-.about {
-}
-
-.about__inner {
-}
-
-.about__content {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: flex-start;
-    margin-top: 40px;
-
-    @include mq(md) {
-        margin-top: 60px;
-        flex-direction: row;
-        @include mq(md) {
-            margin-top: 80px;
-        }
-    }
-}
-
-.about__skills {
-    flex: 1;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.skill:nth-child(1) {
-    position: relative;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: -87px;
-        left: 70%;
-        width: 100px;
-        height: 100px;
-        background: url('../img/logo-icon12自転車.png') no-repeat center center / contain;
-        @include mq(md) {
-            top: -116px;
-            width: 120px;
-            height: 120px;
-            left: 0;
-        }
-    }
-}
-.about__skills-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: $color-text;
-    margin-bottom: 50px;
-    text-align: center;
-    position: relative;
-    @include mq(md) {
-        font-size: 24px;
-        margin-bottom: 80px;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 70px;
-        height: 2px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        border-radius: 2px;
-        @include mq(md) {
-            width: 124px;
-            height: 3px;
-        }
-    }
-}
-
-.skill {
-    display: flex;
-    align-items: center;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    background: #fff;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.skill:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.skill__icon {
-    font-size: 1.8rem;
-    margin-right: 20px;
-    width: 40px;
-    text-align: center;
-    color: #667eea;
-    @include mq(md) {
-        font-size: 3rem;
-        width: 50px;
-    }
-}
-
-.skill--html .skill__icon {
-    color: #e34f26;
-}
-.skill--css .skill__icon {
-    color: #1572b6;
-}
-.skill--js .skill__icon {
-    color: #f7df1e;
-}
-.skill--wordpress .skill__icon {
-    color: #21759b;
-}
-.skill--git .skill__icon {
-    color: #f05032;
-}
-.skill--design .skill__icon {
-    color: #ff61f6;
-}
-.skill--delivery .skill__icon {
-    color: #28a745;
-}
-
-.skill__text {
-    font-size: 14px;
-    font-weight: 600;
-    color: #2c3e50;
-
-    @include mq(md) {
-        font-size: 18px;
-    }
-}
-
-.about__profile {
-    flex: 1;
-    background: white;
-    border-radius: 15px;
-    padding: 30px 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.about__profile-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.about__profile-avatar {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    @include mq(md) {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-.about__profile-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    @include mq(md) {
-        font-size: 24px;
-    }
-}
-
-.about__profile-story {
-    color: #6b7280;
-    font-size: 16px;
-    letter-spacing: 0.02em;
-    line-height: 1.8;
-    @include mq(md) {
-        font-size: 20px;
-    }
-}
-
-.about__profile-story p {
-    margin-bottom: 20px;
-}
-
-.about__profile-story strong {
-    color: $color-main1;
-    font-weight: 600;
-}
-
-// -----------------------------------------
 // work
 // -----------------------------------------
 /* ========= 基本ユーティリティ ========= */
@@ -431,7 +240,7 @@
 /* ========= セクション枠 ========= */
 .works {
     padding-top: 60px;
-    background: $color-main2;
+    background: #fff;
 }
 .works__content {
     margin-top: 30px;
@@ -653,6 +462,199 @@
 
 .work-card__text {
 }
+
+// -----------------------------------------
+// about
+// -----------------------------------------
+.about {
+    background: $color-main2;
+}
+
+.about__inner {
+}
+
+.about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 40px;
+
+    @include mq(md) {
+        margin-top: 60px;
+        flex-direction: row;
+        @include mq(md) {
+            margin-top: 80px;
+        }
+    }
+}
+
+.about__skills {
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.skill:nth-child(1) {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -87px;
+        left: 70%;
+        width: 100px;
+        height: 100px;
+        background: url('../img/logo-icon12自転車.png') no-repeat center center / contain;
+        @include mq(md) {
+            top: -116px;
+            width: 120px;
+            height: 120px;
+            left: 0;
+        }
+    }
+}
+.about__skills-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-text;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    @include mq(md) {
+        font-size: 24px;
+        margin-bottom: 80px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 2px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
+        @include mq(md) {
+            width: 124px;
+            height: 3px;
+        }
+    }
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.skill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill__icon {
+    font-size: 1.8rem;
+    margin-right: 20px;
+    width: 40px;
+    text-align: center;
+    color: #667eea;
+    @include mq(md) {
+        font-size: 3rem;
+        width: 50px;
+    }
+}
+
+.skill--html .skill__icon {
+    color: #e34f26;
+}
+.skill--css .skill__icon {
+    color: #1572b6;
+}
+.skill--js .skill__icon {
+    color: #f7df1e;
+}
+.skill--wordpress .skill__icon {
+    color: #21759b;
+}
+.skill--git .skill__icon {
+    color: #f05032;
+}
+.skill--design .skill__icon {
+    color: #ff61f6;
+}
+.skill--delivery .skill__icon {
+    color: #28a745;
+}
+
+.skill__text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+
+    @include mq(md) {
+        font-size: 18px;
+    }
+}
+
+.about__profile {
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    padding: 30px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about__profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about__profile-avatar {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    @include mq(md) {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+.about__profile-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    @include mq(md) {
+        font-size: 24px;
+    }
+}
+
+.about__profile-story {
+    color: #6b7280;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1.8;
+    @include mq(md) {
+        font-size: 20px;
+    }
+}
+
+.about__profile-story p {
+    margin-bottom: 20px;
+}
+
+.about__profile-story strong {
+    color: $color-main1;
+    font-weight: 600;
+}
+
 
 // -----------------------------------------
 // order-flow
