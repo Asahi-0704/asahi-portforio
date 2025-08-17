@@ -2,7 +2,12 @@
 @use "../abstracts/breakpoint" as *;
 
 html {
-    scroll-behavior: smooth; // auto or smooth
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px; // デフォルトは72px下げる
+
+  @include mq(md) {
+      scroll-padding-top: 101px;
+  }
 }
 
 body {

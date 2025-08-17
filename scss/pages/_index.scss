@@ -11,7 +11,7 @@
     text-align: center;
 
     @include mq('md') {
-        padding-top: 140px;
+        padding-top: 170px;
     }
 }
 
@@ -25,6 +25,11 @@
 
     @include mq(md) {
         font-size: 44px;
+    }
+    br {
+        @include mq(lg) {
+            display: none;
+        }
     }
 }
 
