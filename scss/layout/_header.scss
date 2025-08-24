@@ -7,14 +7,24 @@
 .header {
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: transparent;
-    border-bottom: 1px solid rgba(200, 200, 200, 0.4);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 110;
+
+    /* 通常時（ヒーローを過ぎたら） */
+    background: $color-main2;
+    border: none;
+    color: $color-text;
+
+    /* ヒーロー上にいる間は透明 */
+    &.header--over-hero {
+        background-color: transparent;
+        border-bottom: 1px solid rgba(200, 200, 200, 0.4);
+        color: #fff; // ヒーロー上で白文字にするなら
+    }
 
     @include mq('md') {
         padding-top: 28px;
@@ -44,9 +54,9 @@
 
 .header__logo-link {
     display: block;
-    padding-left: min(60px,calc(100vw * 60 / 375));
+    padding-left: min(60px, calc(100vw * 60 / 375));
     font-family: $font-family-h1;
-    font-size: min(40px,calc(100vw * 40 / 375));
+    font-size: min(40px, calc(100vw * 40 / 375));
     background: linear-gradient(90deg, #ffcc00 0%, #ff8c00 50%, #ff6f91 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -66,7 +76,7 @@
         left: 0;
         top: 29%;
         transform: translateY(-50%);
-        width: min(60px,calc(100vw * 60 / 375));
+        width: min(60px, calc(100vw * 60 / 375));
         height: 60px;
         background: url('../img/logo-icon.png') no-repeat center center;
         background-size: contain;
@@ -111,7 +121,7 @@
         display: inline-block;
         color: $color-accent1;
         padding: 10px 20px;
-        transition: opacity 0.3s ease;
+        transition: font-weight 0.3s ease;
         position: relative;
         letter-spacing: 1.7px;
 
@@ -125,7 +135,7 @@
         }
 
         &:hover {
-            opacity: 0.8;
+            font-weight: 800;
         }
 
         &::after {
@@ -135,7 +145,7 @@
             right: 0;
             bottom: 4px;
             height: 1px;
-            background-color: $color-text;
+            background-color: $color-accent1;
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }

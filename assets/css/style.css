@@ -145,8 +145,6 @@ img {
 .header {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: transparent;
-  border-bottom: 1px solid rgba(200, 200, 200, 0.4);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
   position: fixed;
@@ -154,6 +152,16 @@ img {
   left: 0;
   right: 0;
   z-index: 110;
+  /* 通常時（ヒーローを過ぎたら） */
+  background: #f0f8ff;
+  border: none;
+  color: #333;
+  /* ヒーロー上にいる間は透明 */
+}
+.header.header--over-hero {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.4);
+  color: #fff;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -265,8 +273,8 @@ img {
   display: inline-block;
   color: #F6AB36;
   padding: 10px 20px;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
+  -webkit-transition: font-weight 0.3s ease;
+  transition: font-weight 0.3s ease;
   position: relative;
   letter-spacing: 1.7px;
 }
@@ -283,7 +291,7 @@ img {
   }
 }
 .header__menu-item a:hover {
-  opacity: 0.8;
+  font-weight: 800;
 }
 .header__menu-item a::after {
   content: "";
@@ -292,7 +300,7 @@ img {
   right: 0;
   bottom: 4px;
   height: 1px;
-  background-color: #333;
+  background-color: #F6AB36;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transition: -webkit-transform 0.3s ease;

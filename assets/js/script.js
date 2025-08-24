@@ -1,22 +1,4 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     const drawerIcon = document.getElementById('js-drawer-icon');
-//     const drawerContent = document.getElementById('js-drawer-content');
-
-//     drawerIcon.addEventListener('click', function () {
-//         // Toggle active class on the drawer icon
-//         drawerIcon.classList.toggle('active');
-//         // Toggle active class on the drawer content
-//         drawerContent.classList.toggle('active');
-//     });
-
-//     // Close the drawer when clicking outside of it
-//     document.addEventListener('click', function (event) {
-//         if (!drawerContent.contains(event.target) && !drawerIcon.contains(event.target)) {
-//             drawerIcon.classList.remove('active');
-//             drawerContent.classList.remove('active');
-//         }
-//     });
-// });
+// ハンバーガーメニュー（ドロワーメニュー）制御
 
 document.addEventListener('DOMContentLoaded', () => {
   const drawerIcon    = document.getElementById('js-drawer-icon');
@@ -93,5 +75,28 @@ document.addEventListener('DOMContentLoaded', () => {
   drawerContent.addEventListener('wheel', (e) => e.stopPropagation(), { passive: true });
   drawerContent.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
 });
+
+// ヘッダーの透明化とスクロール制御
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
+    const hero = document.getElementById('hero');
+
+    // ヘッダーの高さ分だけ判定を前倒し：ヒーローが見え終わる直前に切替
+    const headerH = header.offsetHeight;
+    const io = new IntersectionObserver(([entry]) => {
+      // ヒーローがビューポート内に「交差している間」は over-hero クラスを付与
+      header.classList.toggle('header--over-hero', entry.isIntersecting);
+    }, {
+      root: null,
+      threshold: 0,
+      rootMargin: `-${headerH}px 0px 0px 0px`
+    });
+
+    io.observe(hero);
+
+    // 可変ヘッダーの場合に備えて高さをCSS変数に反映（任意）
+    document.documentElement.style.setProperty('--header-h', `${headerH}px`);
+  });
+
 
 
