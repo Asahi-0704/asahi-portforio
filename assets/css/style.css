@@ -964,7 +964,7 @@ img {
 .button {
   display: inline-block;
   padding: 14px 40px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: #fff;
   background: linear-gradient(135deg, #007acc 0%, #005f99 100%);
