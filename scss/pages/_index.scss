@@ -29,7 +29,7 @@
 }
 
 .hero__content {
-    background: rgba(#fff, $alpha: 0.5);
+    background: rgba(#fff, $alpha: 0.8);
     @include mq(lg) {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -107,27 +107,11 @@
 .news {
     background-color: $color-main2;
     position: relative;
-    margin: 30px 0;
+    margin-bottom: 30px;
     @include mq(md) {
-        margin: 50px 0;
-        padding-top: 60px;
+        margin-bottom: 50px;
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: -30px;
-        left: 0;
-        width: 100%;
-        height: 30px;
-        background: url('../img/wave\ \(1\).svg') repeat-x center center / contain;
-
-        @include mq(md) {
-            top: -50px;
-            height: 50px;
-            background: url('../img/wave-md.svg') repeat-x center center / contain;
-        }
-    }
 
     &::after {
         content: '';
@@ -269,11 +253,10 @@
 
 /* ========= セクション枠 ========= */
 .works {
-    padding-top: 60px;
     background: #fff;
 }
 .works__content {
-    margin-top: 30px;
+    margin-top: 60px;
     padding: 0 20px;
 
     @include mq(md) {
@@ -322,7 +305,7 @@
 
 /* ========= グリッド ========= */
 .works__grid {
-    margin-top: 30px;
+    margin-top: 60px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -699,8 +682,6 @@ $muted: #6b7280; // gray-500-ish
 $border: #e5e7eb;
 
 .order-flow {
-    padding-top: 60px;
-    padding-bottom: 60px;
     background-image: conic-gradient(
         #f0f8ff 90deg,
         transparent 90deg 180deg,
@@ -710,7 +691,6 @@ $border: #e5e7eb;
     background-size: 100px 100px;
     background-color: #fff;
     @include mq(md) {
-        padding-top: 80px;
         background-size: 200px 200px;
     }
 }
