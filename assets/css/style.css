@@ -144,7 +144,7 @@ img {
 /* 2) 変数・mixin（@use as * で直書き可） */
 .header {
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 4px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
   position: fixed;
@@ -1115,11 +1115,13 @@ img {
 }
 
 .hero__button {
-  margin-top: 22px;
+  margin-top: 12px;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 768px) {
   .hero__button {
     margin-top: 32px;
+    margin-bottom: 0;
   }
 }
 
