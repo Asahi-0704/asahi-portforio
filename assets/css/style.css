@@ -1137,7 +1137,7 @@ img {
 .hero__button::after {
   position: absolute;
   content: "＼まずはお気軽に！／";
-  top: -10px;
+  top: -26px;
   left: 50%;
   width: 100%;
   height: auto;
@@ -1835,7 +1835,7 @@ img {
 .parallax__button::after {
   position: absolute;
   content: "＼まずはお気軽に！／";
-  top: -10px;
+  top: -26px;
   left: 50%;
   width: 100%;
   height: auto;
