@@ -16,12 +16,15 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
     min-width: 200px;
+    letter-spacing: 0.1em;
 
     @include mq(md) {
         font-size: 18px;
         width: 300px;
     }
 }
+
+
 
 /* 疑似要素で光のスライドエフェクト */
 .button::before {

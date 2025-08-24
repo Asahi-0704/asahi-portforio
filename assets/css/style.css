@@ -980,6 +980,7 @@ img {
   -webkit-box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
           box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
   min-width: 200px;
+  letter-spacing: 0.1em;
 }
 @media screen and (min-width: 768px) {
   .button {
@@ -1123,6 +1124,7 @@ img {
 }
 
 .hero__button {
+  position: relative;
   margin-top: 12px;
   margin-bottom: 10px;
 }
@@ -1130,6 +1132,25 @@ img {
   .hero__button {
     margin-top: 32px;
     margin-bottom: 0;
+  }
+}
+.hero__button::after {
+  position: absolute;
+  content: "＼まずはお気軽に！／";
+  top: -10px;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+@media screen and (min-width: 768px) {
+  .hero__button::after {
+    top: -32px;
+    font-size: 20px;
   }
 }
 
@@ -1538,6 +1559,11 @@ img {
   background: #f0f8ff;
   padding-bottom: 0;
 }
+@media screen and (min-width: 768px) {
+  .about {
+    padding-bottom: 80px;
+  }
+}
 
 .about__content {
   display: -webkit-box;
@@ -1779,6 +1805,8 @@ img {
   overflow: hidden;
   width: 100%;
   height: 150px;
+  display: grid;
+  place-items: center;
 }
 @media screen and (min-width: 768px) {
   .parallax {
@@ -1802,11 +1830,26 @@ img {
 }
 
 .parallax__button {
+  position: relative;
+}
+.parallax__button::after {
   position: absolute;
-  top: 50%;
+  content: "＼まずはお気軽に！／";
+  top: -10px;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+@media screen and (min-width: 768px) {
+  .parallax__button::after {
+    top: -32px;
+    font-size: 20px;
+  }
 }
 
 /* ========== Config ========== */
