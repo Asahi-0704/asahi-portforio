@@ -1019,6 +1019,7 @@ img {
   height: 100vh;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .hero {
