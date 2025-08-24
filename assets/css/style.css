@@ -1805,7 +1805,7 @@ img {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 150px;
+  height: 200px;
   display: grid;
   place-items: center;
 }
