@@ -252,7 +252,6 @@
 /* ========= セクション枠 ========= */
 .works {
     background: #fff;
-    padding-bottom: 20px;
 }
 
 .works__content {
@@ -477,46 +476,11 @@
 }
 
 // -----------------------------------------
-// parallax
-// -----------------------------------------
-.parallax {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100px;
-    @include mq(md) {
-        height: 300px;
-    }
-}
-
-.parallax__bg {
-    position: absolute;
-    inset: -200% 0;
-    width: 100%;
-    z-index: -1;
-    will-change: transform;
-
-    // 背景用レイヤーを擬似要素で作る
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: url('../img/works-bg.jpg') center/contain no-repeat;
-        opacity: 0.5; // ★背景だけ透過
-    }
-}
-.parallax__button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-// -----------------------------------------
 // about
 // -----------------------------------------
 .about {
     background: $color-main2;
+    padding-bottom: 0;
 }
 
 .about__inner {
@@ -707,6 +671,42 @@
 .about__button {
     text-align: center;
     margin-top: 30px;
+}
+
+// -----------------------------------------
+// parallax
+// -----------------------------------------
+.parallax {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 150px;
+    @include mq(md) {
+        height: 300px;
+    }
+}
+
+.parallax__bg {
+    position: absolute;
+    inset: -200% 0;
+    width: 100%;
+    z-index: -1;
+    will-change: transform;
+
+    // 背景用レイヤーを擬似要素で作る
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('../img/works-bg.jpg') center/contain no-repeat;
+        opacity: 0.5; // ★背景だけ透過
+    }
+}
+.parallax__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 // -----------------------------------------
