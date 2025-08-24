@@ -124,9 +124,10 @@
                             <label class="works__tab" for="tab-all">全て</label>
                             <label class="works__tab" for="tab-wp">WordPress</label>
                             <label class="works__tab" for="tab-coding">
-                                HTML
-                                <br />
                                 コーディング
+                            </label>
+                            <label class="works__tab" for="tab-design">
+                                デザイン
                             </label>
                         </div>
                         <ul class="works__grid">
@@ -182,6 +183,9 @@
                     </div>
                 </div>
             </section>
+            <div class="parallax js-parallax">
+                <div class="parallax__bg"></div>
+            </div>
             <section id="about" class="about section">
                 <div class="about__inner inner">
                     <div class="about__title">
@@ -548,11 +552,31 @@
                             <div class="form__select">
                                 <select id="topic" name="topic" class="form__select-input" required>
                                     <option value="" selected disabled>ご選択ください</option>
+                                    <option value="estimate">お見積もり依頼する</option>
                                     <option value="apply">お申し込み</option>
                                     <option value="question">ご質問</option>
                                     <option value="other">その他</option>
                                 </select>
                             </div>
+                        </div>
+
+                        <!-- 添付ファイル -->
+                        <div class="form__group form__group--file">
+                            <label for="attachment" class="form__label">
+                                添付ファイル
+                                <span class="form__optional">任意</span>
+                            </label>
+                            <input
+                                id="attachment"
+                                name="attachment"
+                                type="file"
+                                class="form__file-input"
+                                accept=".pdf,.jpg,.jpeg,.png,.zip,.ai,.psd,.fig,.xd"
+                                aria-describedby="attachmentHint"
+                            />
+                            <p id="attachmentHint" class="form__hint">
+                                対応形式: PDF/JPG/PNG/ZIP/AI/PSD/FIG/XD ・ 最大10MB
+                            </p>
                         </div>
 
                         <!-- ご用件の詳細 -->

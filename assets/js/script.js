@@ -98,5 +98,44 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--header-h', `${headerH}px`);
   });
 
+// パララックス効果 parallaxセクション
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.querySelector('.parallax');
+  const bg = document.querySelector('.parallax__bg');
+  if (!section || !bg) return;
 
+  const speed = 0.4; // 動きの強さ（0.15〜0.4くらいで調整）
 
+  const update = () => {
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // 画面外のときは何もしない（無駄な再描画を防止）
+    if (rect.bottom < 0 || rect.top > vh) return;
+
+    // セクションの「ビューポート中心からのずれ量」を基準にする
+    // → セクションが画面の中央に来たとき 0px（自然な開始位置）
+    const deltaFromCenter = rect.top + rect.height / 2 - vh / 2;
+
+    // 背景を遅らせて動かす（負方向に動かしたければ -speed に）
+    bg.style.transform = `translateY(${deltaFromCenter * -speed}px)`;
+  };
+
+  // 初期反映
+  update();
+
+  // スクロール/リサイズで更新（パフォーマンス配慮でrAF）
+  let ticking = false;
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        update();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+});

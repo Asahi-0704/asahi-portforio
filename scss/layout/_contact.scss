@@ -8,7 +8,7 @@
 }
 
 .contact__inner {
-    @include mq("md") {
+    @include mq('md') {
         max-width: calc(688px + 30px * 2);
     }
 }
@@ -18,18 +18,15 @@
 }
 
 .contact__title {
-    
 }
 
 .contact__form {
     margin-top: 40px;
     background-color: #fff;
 
-    @include mq("md") {
+    @include mq('md') {
         margin-top: 60px;
     }
-
-
 }
 
 .form {
@@ -37,7 +34,7 @@
     flex-direction: column;
     gap: 17px;
 
-    @include mq("md") {
+    @include mq('md') {
         gap: 27px;
     }
 }
@@ -47,7 +44,7 @@
     flex-direction: column;
     gap: 8px;
     position: relative;
-    @include mq("md") {
+    @include mq('md') {
         gap: 12px;
     }
     &:nth-child(7) {
@@ -57,7 +54,7 @@
             margin-top: 7px;
         }
     }
-        &:nth-child(1):before {
+    &:nth-child(1):before {
         content: '';
         position: absolute;
         top: -45px;
@@ -69,7 +66,7 @@
 
         @include mq(md) {
             left: 85%;
-            top: -176px;
+            top: -112px;
             width: 200px;
             height: 200px;
         }
@@ -82,7 +79,7 @@
     display: flex;
     align-items: center;
 
-    @include mq("md") {
+    @include mq('md') {
         font-size: 18px;
     }
 }
@@ -116,13 +113,11 @@
     &::placeholder {
         color: #ccc;
     }
-
 }
 
 .form__select-input {
     appearance: none;
-    background: url("../img/contact/select-arrow.svg") no-repeat right 16px
-        center;
+    background: url('../img/contact/select-arrow.svg') no-repeat right 16px center;
     background-size: 11px 7px;
     transition: background 0.3s ease;
 }
@@ -131,11 +126,27 @@
     color: #ccc;
 }
 
+.form__group--file {
+    .form__file-input {
+        display: block;
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .form__hint {
+        margin-top: 6px;
+        color: #666;
+    }
+}
+
 .form__textarea {
     resize: vertical;
     min-height: 140px;
 
-    @include mq("md") {
+    @include mq('md') {
         min-height: 240px;
     }
 }
@@ -144,7 +155,7 @@
     margin-top: 21px;
     text-align: center;
 
-    @include mq("md") {
+    @include mq('md') {
         margin-top: 16px;
     }
 }
@@ -166,12 +177,12 @@
     font-weight: 500;
     cursor: pointer;
 
-    @include mq("md") {
+    @include mq('md') {
         padding-left: 42px;
     }
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         left: 4px;
         top: 50%;
@@ -181,7 +192,7 @@
         border: 1px solid #3e3e3e;
         background: #fff;
 
-        @include mq("md") {
+        @include mq('md') {
             width: 32px;
             height: 32px;
             left: 0;
@@ -189,19 +200,19 @@
     }
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         left: 10px;
         top: 55%;
         transform: translateY(-50%);
         width: 17px;
         height: 17px;
-        background: url("../img/contact/check.svg") no-repeat center center;
+        background: url('../img/contact/check.svg') no-repeat center center;
         background-size: contain;
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
 
-        @include mq("md") {
+        @include mq('md') {
             left: 7px;
             width: 20px;
             height: 20px;
@@ -227,7 +238,7 @@
     padding-right: 3px;
     padding-left: 3px;
 
-    @include mq("md") {
+    @include mq('md') {
         padding-right: 6px;
         padding-left: 0px;
     }
@@ -240,9 +251,7 @@
 .form__submit {
     margin-top: 25px;
 
-    @include mq("md") {
+    @include mq('md') {
         margin-top: 20px;
     }
-
-
 }

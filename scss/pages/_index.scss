@@ -36,7 +36,6 @@
     }
 }
 
-
 .hero__title {
     color: #222;
     font-size: 28px;
@@ -111,7 +110,6 @@
     @include mq(md) {
         margin-bottom: 50px;
     }
-
 
     &::after {
         content: '';
@@ -255,6 +253,7 @@
 .works {
     background: #fff;
 }
+
 .works__content {
     margin-top: 60px;
     padding: 0 20px;
@@ -474,6 +473,36 @@
 }
 
 .work-card__text {
+}
+
+// -----------------------------------------
+// parallax
+// -----------------------------------------
+.parallax {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    @include mq(md) {
+        height: 300px;
+    }
+}
+
+.parallax__bg {
+    position: absolute;
+    inset: -160% 0;
+    width: 100%;
+    z-index: -1;
+    will-change: transform;
+
+    // 背景用レイヤーを擬似要素で作る
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('../img/works-bg.jpg') center/contain no-repeat;
+        opacity: 0.5; // ★背景だけ透過
+    }
 }
 
 // -----------------------------------------
@@ -829,4 +858,3 @@ $border: #e5e7eb;
         }
     }
 }
-
