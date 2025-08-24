@@ -113,8 +113,8 @@
         letter-spacing: 0.1em;
 
         @include mq(md) {
-            top: -32px;
-            font-size: 20px;
+            top: -54px;
+            font-size: 28px;
         }
     }
 }
@@ -707,7 +707,7 @@
     display: grid;
     place-items: center;
     @include mq(md) {
-        height: 300px;
+        height: 600px;
     }
 }
 
@@ -743,8 +743,8 @@
         letter-spacing: 0.1em;
 
         @include mq(md) {
-            top: -32px;
-            font-size: 20px;
+            top: -54px;
+            font-size: 28px;
         }
     }
 }

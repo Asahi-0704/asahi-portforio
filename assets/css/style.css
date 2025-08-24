@@ -981,11 +981,12 @@ img {
           box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
   min-width: 200px;
   letter-spacing: 0.1em;
+  text-align: center;
 }
 @media screen and (min-width: 768px) {
   .button {
-    font-size: 18px;
-    width: 300px;
+    font-size: 24px;
+    width: 400px;
   }
 }
 
@@ -1149,8 +1150,8 @@ img {
 }
 @media screen and (min-width: 768px) {
   .hero__button::after {
-    top: -32px;
-    font-size: 20px;
+    top: -54px;
+    font-size: 28px;
   }
 }
 
@@ -1810,7 +1811,7 @@ img {
 }
 @media screen and (min-width: 768px) {
   .parallax {
-    height: 300px;
+    height: 600px;
   }
 }
 
@@ -1847,8 +1848,8 @@ img {
 }
 @media screen and (min-width: 768px) {
   .parallax__button::after {
-    top: -32px;
-    font-size: 20px;
+    top: -54px;
+    font-size: 28px;
   }
 }
 
