@@ -504,6 +504,12 @@
         opacity: 0.5; // ★背景だけ透過
     }
 }
+.parallax__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 // -----------------------------------------
 // about

@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bg = document.querySelector('.parallax__bg');
   if (!section || !bg) return;
 
-  const speed = 0.4; // 動きの強さ（0.15〜0.4くらいで調整）
+  const speed = 0.25; // 動きの強さ（0.15〜0.4くらいで調整）
 
   const update = () => {
     const rect = section.getBoundingClientRect();
