@@ -176,7 +176,7 @@
         transform: translateX(-50%);
         width: 100px;
         height: 100px;
-        background: url('../img/logo-icon13夏服.png') no-repeat center center / contain;
+        background: url('../img/logo-icon15いらっしゃいませ.png') no-repeat center center / contain;
 
         @include mq(md) {
             left: 85%;
@@ -656,6 +656,10 @@
     width: 200px;
     height: 200px;
     margin: 0 auto;
+    border: 8px solid $color-main1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
     @include mq(md) {
         width: 250px;
         height: 250px;

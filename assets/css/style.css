@@ -1212,7 +1212,7 @@ img {
           transform: translateX(-50%);
   width: 100px;
   height: 100px;
-  background: url("../img/logo-icon13夏服.png") no-repeat center center/contain;
+  background: url("../img/logo-icon15いらっしゃいませ.png") no-repeat center center/contain;
 }
 @media screen and (min-width: 768px) {
   .news__content::before {
@@ -1755,6 +1755,11 @@ img {
   width: 200px;
   height: 200px;
   margin: 0 auto;
+  border: 8px solid #007acc;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
+          box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
 }
 @media screen and (min-width: 768px) {
   .about__profile-avatar {
